@@ -1,0 +1,61 @@
+<form (ngSubmit)="onExtractFromDxf($event)" autocomplete="off">
+    <div class="containerX">
+        <div [hidden]="!showFormFirstPart">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="job_name" [(ngModel)]="job_name">
+                <span>Job Name</span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="height" [(ngModel)]="height">
+                <span>Height</span>
+
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="thickness" [(ngModel)]="thickness">
+                <span>Thickness</span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="width" [(ngModel)]="width">
+                <span>Width</span>
+            </div>
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col"><button class="button" (click)="onCancel()">Cancel</button></div>
+                    <div class="col"><button class="button" (click)="showNextForm()">Next</button></div>
+                </div>
+            </div>
+        </div>
+        <div [hidden]="!showFormSecondPart">
+            <div class="form-group">
+                <select class="form-control" name="material" (change)="selectMaterial($event.target)" [(ngModel)]="materialNumber">
+                    <option value="-1">Unknown Material</option>
+                    <option *ngFor="let material of materials; let i = index;" [value]="i">{{ material.name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="density" [disabled]="disabledDensity" [(ngModel)]="density">
+                <span>Density</span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder=" " name="cost_per_unit_area" [(ngModel)]="cost_per_unit_area">
+                <span>Cost</span>
+            </div>
+            <div class="form-group">
+                <label for="file-upload" class="w-100 button text-center">
+                Select DXF File
+                </label>
+                <input id="file-upload" type="file" name="dxf_file"/>
+            </div>
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col"><button class="button" (click)="showPrevForm()">Back</button></div>
+                    <div class="col"><input type="submit"  class="button" value="Extract From DXF"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="output-container" [hidden]="true">
+
+</div>

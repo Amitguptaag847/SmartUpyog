@@ -1,0 +1,73 @@
+.overlay {
+    background-color: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+img {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+    transition: transform 1.2s, width 1.2s;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow:0 0 5px black;
+    font-weight: 900;
+    font-style: bold;
+}
+
+.button:hover {
+    border: 2px solid rgb(255,255,255);
+    background-color: rgb(255,255,255);
+    color: black;
+}
+
+.button:focus {
+    outline: none;
+}
+
+#primaryinput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100vw;
+}
+
+.right-icon {
+    position: absolute;
+    right: 25px;
+    font-size: 1.6rem;
+}
+
+.about-icon{
+    top: 115px;
+}
+
+.setting-icon {
+    top: 25px;
+}
+
+.history-icon {
+    top: 70px;
+}
